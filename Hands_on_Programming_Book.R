@@ -626,4 +626,65 @@ cherries + 1
 c(0, 2, 5)[cherries + 1]
 cherries + 1
 c(0, 2, 5)[cherries + 1]
-### page 151
+prize * 2 ^ diamonds
+same <- symbols[1] == symbols[2] && symbols[2] == symbols[3]
+bars <- symbols %in% c("B", "BB", "BBB")
+if (same) {
+  payouts <- c("DD" = 100, "7" = 88, "BBB" = 40, "BB" = 25, 
+               "B" = 10, "C" = 10, "0" = )
+}
+prize * 1
+prize * 2
+prize * 4
+prize * 8
+prize * 2 ^ diamonds
+same <- symbols[1] == symbols[2] && symbols[2] == symbols[3]
+bars <- symbols %in% c("B", "BB", "BBB")
+if (same) {
+  payouts <- c("DD" = 100, "7" = 80, "BBB" = 40, "BB" = 25,
+               "B" = 10, "C" = 10, "0" = 0)
+  prize <- unname(payouts[symbols[1]])
+} else if (all(bars)) {
+  prize <- 5
+} else {
+  cherries <- sum(symbols == "C")
+  prize <- c(0, 2, 5)[cherries + 1]
+}
+diamonds <- sum(symbols == "DD")
+prize * 2 ^ diamonds
+
+# idenfity case
+same <- symbols[1] == symbols[2] && symbols[2] == symbols[3]
+bars <- symbols %in% c("B", "BB", "BBB")
+# get prize 
+if (same) {
+  payouts <- c("DD" = 100, "7" = 80, "BBB", = 40, "BB" = 25,
+               "B" = 10, "C" = 10, "0"= 0)
+  prize <- unname(payouts[symbols[1]])
+} else if (all(bars)) {
+  prize <- 5
+} else {
+  cherries <- sum(symbols == "C")
+  prize <- c(0, 2, 5)[cherries + 1]
+}
+
+diamonds <- sum(symbols == "DD")
+prize * 2 ^ diamonds
+
+play <- function() {
+  symbols <- get_symbols()
+  print(symbols)
+  score(symbols)
+}
+play()
+play()
+play()
+one_play <- play()
+one_play
+num <- 10000000
+print(num)
+class(num) <- c("POSIXct", "POSIXt")
+print(num)
+
+
+
