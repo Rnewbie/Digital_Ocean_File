@@ -750,9 +750,57 @@ print
 print.POSIXct
 print.factor
 methods(print)
-### page 164
-
-
+class(one_play) <- "slots"
+args(print)
+plot.slots <- function(x, ...) {
+  cat("I'm using the print.slots method")
+}
+print(one_play)
+one_play
+rm(print.slots)
+now <- Sys.time()
+attributes(now)
+print.slots <- function(x, ...) {
+  slot_display(x)
+}
+one_play
+play <- function() {
+  symbols <- get_symbols()
+  structure(score(symbols), symbols = symbols)
+}
+play <- function() {
+  symbols <- get_symbols()
+  structure(score(symbols), symbols = symbols, class = "slots")
+}
+class(play())
+play()
+methods(class = "factor")
+play1 <- play()
+play1
+play2 <- play()
+play2
+c(play1, play2)
+die <- c(1, 2, 3, 4, 5, 6)
+rolls <- expand.grid(die, die)
+rolls
+rolls$value <- rolls$Var1 + rolls$Var2
+head(rolls, 3)
+prob <- c("1" = 1/8, "2" = 1/8, "3" = 1/8, "4" = 1/8, "5" = 1/8, "6" = 3/8)
+prob
+rolls$Var1
+prob[rolls$Var1]
+rolls$prob1 <- prob[rolls$Var1]
+head(rolls, 3)
+rolls$prob1 <- prob[rolls$Var1]
+head(rolls, 3)
+rolls$prob2 <- prob[rolls$Var2]
+head(rolls, 3)
+rolls$prob <- rolls$prob1 * rolls$prob2
+head(rolls, 3)
+sum(rolls$value * rolls$prob)
+wheel <- c("DD", "7", "BBB", "BB", "B", "C", "0")
+combos <- expand.grid(wheel, wheel, wheel, stringsAsFactors = FALSE)
+combos
 
 
 
