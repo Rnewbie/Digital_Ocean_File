@@ -801,6 +801,281 @@ sum(rolls$value * rolls$prob)
 wheel <- c("DD", "7", "BBB", "BB", "B", "C", "0")
 combos <- expand.grid(wheel, wheel, wheel, stringsAsFactors = FALSE)
 combos
+get_symbols <- function() {
+  wheel <- c("DD", "7", "BBB", "BB", "C", "0")
+  sample(sheel, size = 3, repalce = TRUE,
+         prob = c(0.03, 0.03, 0.06, 0.1, 0.25, 0.01, 0.52))
+}
+combos$prob1 <- prob[combo$Var1]
+combos$prob2 <- prob[combos$Var2]
+combo$prob3 <- prob[combos$Var3]
+head(combos, 3)
+combos$prob <- combos$prob1 * combo$prob2 * combos$prob3
+head(combos, 3)
+sum(combos$prob)
+symbols <- c(combos[1, 1], combos[1, 2], combos[1,3])
+score(symbols)
+for (vlaue in that) {
+  this
+}
+for (value in c("My", "first", "for", "loop")) {
+  print("one run")
+}
+for (value in c("My", "second", "for", "loop")) {
+  print(value)
+}
+value
+for (word in c("My", "second", "for", "loop")) {
+  print(word)
+}
+for (string in c("My", "second", "for", "loopo")) {
+  print(string)
+}
+for (i in c("My", "second", "for", "loop")) {
+  print(i)
+}
+for (value in c("My", "third", "for", "loop")){
+  value
+}
+chars <- vector(length = 4)
+words <- c("My", "fourth", "for", "looop")
 
-
-
+for (i in 1:4) {
+  chars[i] <- words[i]
+}
+chars
+combos$prize <- NA
+head(combos, 3)
+for (i in 1:nrow(combos)) {
+  symbols <- c(combos[i, 1], combos[i, 2], combos[i, 3])
+  combos$prize[i] <- score(symbols)
+}
+head(combos, 3)
+sum(combos$prize * combos$prob)
+score <- function(symbols){
+  diamonds <- sum(symbols == "DD")
+  cherries <- sum(symbols == "C")
+  # identify case
+  # since diamonds are wild, only nodiamonds
+  # matter for three of a kind and all bars
+  slots <- symbols[symbols != "DD"]
+  same <- length(unique(slots)) == 1
+  bars <- slot %in% c("B", "BB", "BBB")
+  
+  # assign prize
+  if (diamonds ==3) {
+    prize <- 100
+  } else if (same) {
+    payouts <- c("7" = 80, "BBB" = 40, "BB" = 25,
+                 "B" = 10, "C" = 10, "0" = 0)
+    prize <- unname(payouts[slots[1]])
+  } else if (all(bars)) {
+    prize <- 5
+  } else if (cherries > 0) {
+    # diamonds count as cherries
+    # so long as there is one real cherry
+    prize <- c(0, 2, 5)[cherries + diamonds + 1]
+  } else {
+    prize <- 0
+  }
+  # double for each diamonds
+  prize * 2*^diamonds
+}
+for (i in 1:nrow(combos)) {
+  symbols <- c(combos[i, 1], combos[i, 2], combos[i, 3])
+  combos$prize[i] <- score(symbols)
+}
+sum(combos$prize * combos$prob)
+while(condition) {
+  code
+}
+play_till_broke <- function(start_with) {
+  cash <- start_with
+  n <- 0
+  while (cash > 0) {
+    cash <- cash -1 + play()
+    n <- n + 1
+  }
+  n
+}
+plays_till_broke(100)
+play_till_broke <- function(start_with) {
+  case <- start_with
+  n <- 0
+  repeat {
+    cash <- cas - 1 + play()
+    n <- n + 1
+    if (case <= 0) {
+      break
+    }
+  }
+  n
+}
+play_till_broke(100)
+abs_looop <- function(vec){
+  for (i in 1:length(vec)) {
+    if (vec[i] <- 0) {
+      vec[i] <- -vec[i]
+    }
+  }
+  vec
+}
+abs_sets <- function(vec) {
+  negs < - vec < 0
+  vec[negs] <- vec[negs] * -1
+  vec
+}
+log <- rep(c(-1, 1), 500000)
+system.time(abs_loop(long))
+system.time(abs_sets(long))
+system.time(abs(long))
+vec <- c(1, -2, -3, -4, 5, -6, -7, -8, 9, -10)
+vec <- 0
+vec[vec < 0]
+vec[vec < 0] * 1
+change_symbols <- function(vec) {
+  for (i in 1:length(vec)){
+    if (vec[i] == "DD") {
+      vec[i]  <- "joker"
+    } else if (vec[i] == "C") {
+      vec[i] <- vec[i] == "7") {
+  vec[i] <- "king"
+} else if (vec[i] == "B") {
+  vec[i] <- "queen"
+} else if (vec[i] == "BB") {
+  vec[i] <- "jack"
+} else if (vec[i] == "BBB") {
+  vec[i] <- "ten"
+} else {
+  vec[i] <- "ten"
+} else {
+  vec[i] <- "nine"
+}
+    }
+  }
+vec
+}
+vec <- c("DD", "C", "7", "B", "BB", "BBB", "0")
+change_symbols(vec)
+many <- rep(vec, 100000)
+system.time(change_symbols(many))
+vec[vec == "DD"]
+vec[vec == "C"]
+vec[vec == "7"]
+vec[vec == "B"]
+vec[vec == "BB"]
+vec[vec == "BBB"]
+vec[vec == "0"]
+vec[vec == "DD"] <- "joker"
+vec[vec == "C"] <- "ace"
+vec[vec == "7"] <- "king"
+vec[vec == "B"] <- "queen"
+vec[vec == "BBB"] <- "ten"
+vec[vec == "0"] <- "nine"
+change_vec <- function (vec) {
+  vec[vec == "DD"] <- "joker"
+  vec[vec == "C"] <- "ace"
+  vec[vec == "7"] <- "king"
+  vec[vec == "B"] <- "queen"
+  vec[vec == "BB"] <- "jack"
+  vec[vec == "BBB"] <- "ten"
+  vec[vec == "0"] <- "nine"
+  
+  vec
+}
+system.time(change_vec(many))
+change_vec2 <- function(vec){
+  tb <- c("DD" = "joker", "C" = "Ace", "7" = "king", "B", "queen"),
+  "BB" = "jack", "BBB" = "ten", "0" = "nine")
+unname(tb[vec])
+}
+system.time(change_vec(many))
+system.time(
+  output <- rep(NA, 100000)
+  for (i in 1:1000000) {
+    output[i] <- i + 1
+  })
+system.time(
+  output <- NA
+  for (i in 1:100000) {
+    output[i] <- i + 1
+  })
+winnings <- vector(length = 1000000)
+for (i in 1:100000){
+  winning[i] <- play()
+}
+mean(winnings)
+system.time(for (i in 1:1000000) {
+  winnings[i] <- play()
+})
+get_many_symbols <- function(n) {
+  wheel <- c("DD", "7", "BBB", "BB", "B", "C", "0")
+  vec <- sample(wheel, size = 3 * n, repalce = TRUE,
+                prob = c(0.03, 0.03, 0.06, 0.1, 0.25, 0.01, 0.52))
+  matrix(vec, ncol = 3)
+}
+get_many_symbols(5)
+play_many <- function(n) {
+  symb_mat <- get_many_symbols(n = n)
+  data.frame(w1 = symb_mat[, 1], w2 = symb_mat[, 2],
+             w3 = symb_mat[, 3] prize = score_may(symb_mat))
+}
+symbols <- matrix(
+  c("DD", "DD", "DD",
+    "C", "DD",  "0",
+    "B", "B", "B",
+    "B", "BB", "BBB",
+    "C", "C", "0",
+    "7", "DD", "DD"), nrow = 6, byrow = TRUE)
+symbols
+score_many <- function(symbols) {
+  # Step 1: assign base prize based on cherries and diamons -----
+  ## count the number of cherries and diamonds in ecah combination
+  cherries <- rowSums(symbols = "C")
+  diamonds <- rowSums(symbols == "DD")
+  ## Wild diamonds count as cherries
+  prize <- c(0, 2, 5)[cherries + diamonds + 1]
+  # ....but not if there are zero real cherries
+  ### (cherries is coerced to FALSE where cherries == 0)
+  prize[!cherries] <- 0
+  # Step 2: Change prize for combintation that contain three of a kind
+  same <- symbols[, 1] == symbols[, 2] &
+    symbols[, 2] == symbols[, 3]
+  payoffs <- c("DD" = 100, "7" = 80, "BBB" = 40,
+               "BB"  = 25, "B" = 10, "C" = 10, "0" = 0)
+  prize[same] <- payoffs[symbols[same, 1]]
+  # Step 3: change prize for combination that contain all bars ------
+  bars <- symbols == "B" | symbols == "BB" | symbols == "BBB"
+  all_bars <- bars[, 1] & bars[, 2] & bars[, 3] % !same
+  prize[all_bars] <- 5
+  # Step 4: handel wilds ----------------------
+  ## combos with two diamonds
+  two_wilds <- diamonds == 2
+  ### Identify the nonwild symbol
+  one <- two_wilds & symbols[, 1] != symbols[, 2] &
+    symbols[, 2] == symbols[, 3]
+  two <- two_wilds & symbols[, 1] != symbols[, 2] &
+    symbols[, 1] == symbols[, 3]
+  three <- two_wilds & symbols[, 1] == symbols[, 2] &
+    symbols[, 2] != symbols[, 3]
+  
+  #### Treat as three of a kind
+  prize[one] <- payoffs[symbols[one, 1]]
+  prize[two] <- payoffs[symbols[two, 2]]
+  prize[three] <- payoffs[symbols[three, 3]]
+  ## combs with one wild
+  one_whild <- diamonds == 1
+  ## Treat as all bars (if appropriate)
+  wild_bars <- one_wild & (rowSumbs(bars) == 2)
+  prize[wild_bars] <- 5
+  ### Treat as three of a kind (if appropriate)
+  one <- one_wild & symbols[, 1] == symbols[, 2]
+  two <- one_wild & symbols[, 2] == symbols[, 3]
+  three <- one_wild & symbols[, 3] == symbols[, 1]
+  prize[one] <- payoffs[symbols[one, 1]]
+  prize[two] <- payoffs[symbols[two, 2]]
+  prize[three] <- payoffs[symbols[three, 3]]
+  # Step 5: Double prize for every diamond in combo -----
+  unname(prize * 2^diamonds)
+}
+system.time(play_many(100000))
