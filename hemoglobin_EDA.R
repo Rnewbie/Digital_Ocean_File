@@ -474,6 +474,7 @@ get.sid <- function(sid, quiet=TRUE, from.file=FALSE) {
 library(XML)
 library(RJSONIO)
 library(car)
+library(ggplot2)
 
 
 inactive <- c(100426, 1006914, 1019679, 1012567, 10025103, 1000603, 1015601, 1005238, 10143,
