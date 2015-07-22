@@ -497,9 +497,17 @@ eda_active_data <- active[c("MolecularWeight", "XLogP",
                             "HydrogenBondDonorCount", "HydrogenBondAcceptorCount")]
 eda_active_data$Label <- "Active"
 df <- rbind(eda_inactive_data, eda_active_data)
-a <- ggplot(df, aes(x = Label, y = MolecularWeight, fill = Label)) + geom_boxplot()
-b <- ggplot(df, aes(x = Label, y = XLogP, fill = Label)) + geom_boxplot()
-c <- ggplot(df, aes(x = Label, y= HydrogenBondDonorCount, fill = Label)) + geom_boxplot()
-d <- ggplot(df, aes(x = Label, y = HydrogenBondAcceptorCount, fill = Label)) + geom_boxplot()
+a <- ggplot(df, aes(x = Label, y = MolecularWeight, fill = Label)) + geom_boxplot() +
+  theme(
+    panel.border = element_rect(linetype = "solid", colour = "black", fill = NA, size = 1))
+b <- ggplot(df, aes(x = Label, y = XLogP, fill = Label)) + geom_boxplot() + 
+  theme(
+    panel.border = element_rect(linetype = "solid", colour = "black", fill = NA, size = 1))
+c <- ggplot(df, aes(x = Label, y= HydrogenBondDonorCount, fill = Label)) + geom_boxplot() + 
+  theme(
+    panel.border = element_rect(linetype = "solid", colour = "black", fill = NA, size = 1))
+d <- ggplot(df, aes(x = Label, y = HydrogenBondAcceptorCount, fill = Label)) + geom_boxplot() +
+  theme(
+    panel.border = element_rect(linetype = "solid", colour = "black", fill = NA, size = 1))
 library(cowplot)
 plot_grid(a, b, c, d, labels = c("A", "B", "C", "D"), ncol = 2)
