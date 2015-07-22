@@ -1,4 +1,4 @@
-## retrival for pubchem
+
 
 
 .join <- function (x, delim = ",") 
@@ -213,11 +213,7 @@ get.assay <- function(aid, quiet=TRUE) {
 }
 
 
-#################################
-##
-## Get compound data
-##
-#################################
+
 
 
 .eh <- function() {
@@ -316,11 +312,7 @@ get.cid <- function(cid, quiet=TRUE, from.file=FALSE) {
   eventhandlers$data()
 }
 
-#################################################
-#
-# Get substance associations from compound data
-#
-#################################################
+
 .csideh <- function() {
   
   tmpdata <- list()
@@ -399,11 +391,7 @@ get.sid.list <- function(cid, quiet=TRUE, from.file=FALSE) {
   
 }
 
-#################################
-##
-## Get substance data
-##
-#################################
+
 get.sid <- function(sid, quiet=TRUE, from.file=FALSE) {
   
   datafile <- NA
@@ -424,11 +412,7 @@ get.sid <- function(sid, quiet=TRUE, from.file=FALSE) {
   dat
 }
 
-#####################################
-##
-## Contributed code
-##
-#####################################
+
 
 .find.compound.count <- function (compounds, quiet = TRUE) {
   ## If list of Compounds, collapse into OR combined querystring
